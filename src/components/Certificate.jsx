@@ -79,7 +79,6 @@ const Certificate = () => {
 
         {/* Static Labels */}
         <div style={{ position: 'absolute', top: '330px', left: '170px', fontSize: '22px', fontWeight: 'bold', color: '#000080' }}>Course Name:</div>
-        <div style={{ position: 'absolute', top: '408px', left: '170px', fontSize: '15px', color: '#3B5998' }}>Case Summary:</div>
         <div style={{ position: 'absolute', bottom: '230px', left: '170px', fontSize: '18px', color: '#3B5998' }}>Certificate ID:</div>
         <div style={{ position: 'absolute', bottom: '195px', left: '170px', fontSize: '18px', color: '#3B5998' }}>Hours:</div>
         <div style={{ position: 'absolute', bottom: '160px', left: '170px', fontSize: '18px', color: '#3B5998' }}>Date of Completion:</div>
@@ -94,14 +93,14 @@ const Certificate = () => {
           style={{
             ...baseStyle,
             fontFamily: "Times New Roman, serif",
-            fontSize: "50px",
+            fontSize: "37px",
             fontWeight: "bold",
             color: "#D4AF37",
             position: "absolute",
-            top: "250px",
+            top: "260px",
             left: "50%",
             transform: "translateX(-50%)",
-            width: "600px",
+            width: "900px",
             textAlign: "center",
             textTransform: "uppercase",
           }}
@@ -140,8 +139,8 @@ const Certificate = () => {
     ...baseStyle,
     position: "absolute",
     top: "410px",
-    left: "275px",
-    width: "700px",
+    left: "170px",
+    width: "800px",
     fontSize: "13px",
     lineHeight: "1.5",
     minHeight: "60px",
