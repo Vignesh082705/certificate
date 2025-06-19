@@ -119,7 +119,7 @@ const Certificate = () => {
     ...baseStyle,
     position: "absolute",
     top: "330px",
-    left: "330px",
+    left: "320px",
     width: "670px",
     fontSize: "22px",
     fontWeight: "bold",
@@ -141,7 +141,7 @@ const Certificate = () => {
     ...baseStyle,
     position: "absolute",
     top: "410px",
-    left: "290px",
+    left: "275px",
     width: "700px",
     fontSize: "13px",
     lineHeight: "1.5",
@@ -238,6 +238,7 @@ const Certificate = () => {
             bottom: "110px",
             right: "130px",
             textAlign: "center",
+            color: "#3B5998",
           }}
         >
           <img
