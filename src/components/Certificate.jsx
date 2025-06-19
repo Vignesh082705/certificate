@@ -73,9 +73,9 @@ const Certificate = () => {
         }}
       >
         {/* Headings */}
-        <div style={{ position: 'absolute', top: '70px', left: '50%', transform: 'translateX(-50%)', fontSize: '60px', fontWeight: '400', color: '#DAA520' }}>CERTIFICATE</div>
-        <div style={{ position: 'absolute', top: '170px', left: '50%', transform: 'translateX(-50%)', fontSize: '30px', fontWeight: '400', color: '#003366' }}>OF PARTICIPATION</div>
-        <div style={{ position: 'absolute', top: '220px', left: '50%', transform: 'translateX(-50%)', fontSize: '25px', color: '#003366' }}>THIS CERTIFICATE IS PROUDLY PRESENTED TO</div>
+        <div style={{ position: 'absolute', top: '80px', left: '50%', transform: 'translateX(-50%)', fontSize: '55px', fontWeight: '400', color: '#DAA520', fontFamily: 'Verdana, sans-serif' }}>CERTIFICATE</div>
+        <div style={{ position: 'absolute', top: '170px', left: '50%', transform: 'translateX(-50%)', fontSize: '28px', fontWeight: '400', color: '#003366', fontFamily: 'Verdana, sans-serif' }}>OF PARTICIPATION</div>
+        <div style={{ position: 'absolute', top: '220px', left: '50%', transform: 'translateX(-50%)', fontSize: '23px', color: '#003366', fontFamily: 'Verdana, sans-serif' }}>THIS CERTIFICATE IS PROUDLY PRESENTED TO</div>
 
         {/* Static Labels */}
         <div style={{ position: 'absolute', top: '330px', left: '170px', fontSize: '22px', fontWeight: 'bold', color: '#000080' }}>Course Name:</div>
@@ -94,11 +94,11 @@ const Certificate = () => {
           style={{
             ...baseStyle,
             fontFamily: "Times New Roman, serif",
-            fontSize: "45px",
+            fontSize: "50px",
             fontWeight: "bold",
             color: "#D4AF37",
             position: "absolute",
-            top: "260px",
+            top: "250px",
             left: "50%",
             transform: "translateX(-50%)",
             width: "600px",
@@ -109,8 +109,7 @@ const Certificate = () => {
           {getValue("name", "NAME")}
         </div>
 
- {/* Course Name - Max 2 lines */}
-<div
+        <div
   contentEditable
   suppressContentEditableWarning
   onFocus={(e) => handleFocus(e, "course", "Course Name")}
@@ -124,15 +123,14 @@ const Certificate = () => {
     fontSize: "22px",
     fontWeight: "bold",
     lineHeight: "1.5",
-    maxHeight: `${1.5 * 2 * 22}px`, // 2 lines
-    overflow: "hidden",
+    minHeight: "60px",
     color: "#000080",
   }}
 >
   {getValue("course", "Course Name")}
 </div>
 
-{/* Course Summary - Max 6 lines */}
+{/* Course Summary */}
 <div
   contentEditable
   suppressContentEditableWarning
@@ -146,8 +144,7 @@ const Certificate = () => {
     width: "700px",
     fontSize: "13px",
     lineHeight: "1.5",
-    maxHeight: `${1.5 * 6 * 13}px`, // 6 lines
-    overflow: "hidden",
+    minHeight: "60px",
     color: "#3B5998",
   }}
 >
