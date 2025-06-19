@@ -138,12 +138,13 @@ const Certificate = () => {
   style={{
     ...baseStyle,
     position: "absolute",
-    top: "410px",
+    top: "390px",
     left: "170px",
-    width: "800px",
+    width: "810px",
     fontSize: "13px",
     lineHeight: "1.5",
     minHeight: "60px",
+    textAlign: "center",
     color: "#3B5998",
   }}
 >
