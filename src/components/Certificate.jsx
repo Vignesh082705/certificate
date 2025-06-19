@@ -109,7 +109,7 @@ const Certificate = () => {
           {getValue("name", "NAME")}
         </div>
 
-        {/* Course Name */}
+ {/* Course Name - Max 2 lines */}
 <div
   contentEditable
   suppressContentEditableWarning
@@ -124,14 +124,15 @@ const Certificate = () => {
     fontSize: "22px",
     fontWeight: "bold",
     lineHeight: "1.5",
-    minHeight: "60px",
+    maxHeight: `${1.5 * 2 * 22}px`, // 2 lines
+    overflow: "hidden",
     color: "#000080",
   }}
 >
   {getValue("course", "Course Name")}
 </div>
 
-{/* Course Summary */}
+{/* Course Summary - Max 6 lines */}
 <div
   contentEditable
   suppressContentEditableWarning
@@ -145,12 +146,14 @@ const Certificate = () => {
     width: "700px",
     fontSize: "13px",
     lineHeight: "1.5",
-    minHeight: "60px",
+    maxHeight: `${1.5 * 6 * 13}px`, // 6 lines
+    overflow: "hidden",
     color: "#3B5998",
   }}
 >
   {getValue("summary", "Course Summary")}
 </div>
+
         {/* Certificate ID */}
         <div
           contentEditable
