@@ -120,6 +120,7 @@ const Certificate = () => {
     left: "335px",
     width: "670px",
     fontSize: "18px",
+    textAlign:"center",
     fontWeight: "bold",
     lineHeight: "1.5",
     minHeight: "60px",
