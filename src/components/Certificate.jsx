@@ -233,27 +233,50 @@ const Certificate = () => {
         </div>
 
         {/* Signature */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: "110px",
-            right: "110px",
-            textAlign: "center",
-            color: "#3B5998",
-          }}
-        >
-          <img
-            src="/signature.png"
-            alt="Signature"
-            style={{ width: "250px", marginBottom: "10px" }}
-          />
-          <p style={{ fontSize: "24px", fontFamily: "'Pacifico', cursive" }}>
-            Umamaheswari Sukumar
-          </p>
-          <p style={{ fontSize: "16px", fontFamily: "Verdana, sans-serif" }}>
-            Executive Director
-          </p>
-        </div>
+        {/* Signature and Seal Container */}
+<div
+  style={{
+    position: "absolute",
+    bottom: "110px",
+    right: "110px",
+    textAlign: "center",
+    color: "#3B5998",
+  }}
+>
+  {/* Seal - background layer */}
+  <img
+    src="/seal.png"
+    alt="Seal"
+    style={{
+      width: "100px",
+      position: "absolute",
+      bottom: "55px",
+      right: "90px",
+      zIndex: 1,
+    }}
+  />
+
+  {/* Signature - top layer */}
+  <img
+    src="/signature.png"
+    alt="Signature"
+    style={{
+      width: "200px",
+      position: "relative",
+      zIndex: 2,
+      marginLeft:"25px",
+      marginBottom: "15px",
+    }}
+  />
+
+  {/* Name and Title */}
+  <p style={{ fontSize: "24px", fontFamily: "'Pacifico', cursive", margin: 0 }}>
+    Umamaheswari Sukumar
+  </p>
+  <p style={{ fontSize: "16px", fontFamily: "Verdana, sans-serif", margin: 0 }}>
+    Executive Director
+  </p>
+</div>
       </div>
 
       {/* Download Button */}
