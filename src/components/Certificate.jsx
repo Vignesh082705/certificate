@@ -270,7 +270,7 @@ const Certificate = () => {
   />
 
   {/* Name and Title */}
-  <p style={{ fontSize: "24px", fontFamily: "'Pacifico', cursive", margin: 0 }}>
+  <p style={{ fontSize: "20px", fontWeight:"bold", fontFamily: "'Playfair Display'", textTransform: "uppercase", margin: 0 }}>
     Umamaheswari Sukumar
   </p>
   <p style={{ fontSize: "16px", fontFamily: "Verdana, sans-serif", margin: 0 }}>
