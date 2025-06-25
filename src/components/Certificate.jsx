@@ -153,84 +153,159 @@ const Certificate = () => {
 </div>
 
         {/* Certificate ID */}
-        <div
-          contentEditable
-          suppressContentEditableWarning
-          onFocus={(e) => handleFocus(e, "certNo", "AAACT10000000")}
-          onBlur={(e) => handleBlur(e, "certNo", "AAACT10000000")}
-          style={{
-            ...baseStyle,
-            position: "absolute",
-            bottom: "230px",
-            left: "350px",
-            width: "400px",
-            fontSize: "16px",
-            fontWeight: 'bold',
-            color: "#3B5998",
-          }}
-        >
-          {getValue("certNo", "AAACT10000000")}
-        </div>
+       {/* Static prefix */}
+<div
+  style={{
+    position: "absolute",
+    bottom: "230px",
+    left: "350px",
+    fontSize: "16px",
+    fontWeight: "bold",
+    fontFamily: "Verdana, sans-serif",
+    color: "#3B5998",
+  }}
+>
+  AAACT1000
+</div>
+
+{/* Input for last 4 digits */}
+<input
+  type="text"
+  value={form.certNo}
+  maxLength={4}
+  onChange={(e) =>
+    setForm({
+      ...form,
+      certNo: e.target.value.replace(/[^0-9]/g, ""),
+    })
+  }
+  placeholder="0000"
+  style={{
+    position: "absolute",
+    bottom: "227px",       // slightly moved up
+    left: "456px",
+    width: "60px",
+    height: "26px",        // increased height
+    lineHeight: "26px",    // match height
+    fontSize: "16px",
+    fontWeight: "bold",
+    fontFamily: "Verdana, sans-serif",
+    border: "none",
+    outline: "none",
+    background: "transparent",
+    color: "#3B5998",
+    textAlign: "left",
+    padding: "0px",        // remove extra spacing
+    boxSizing: "border-box", // ensures height is respected
+  }}
+/>
 
         {/* Hours */}
         <div
-          contentEditable
-          suppressContentEditableWarning
-          onFocus={(e) => handleFocus(e, "hours", "0 Hour")}
-          onBlur={(e) => handleBlur(e, "hours", "0 Hour")}
-          style={{
-            ...baseStyle,
-            position: "absolute",
-            bottom: "195px",
-            left: "350px",
-            width: "400px",
-            fontSize: "16px",
-            fontWeight: 'bold',
-            color: "#3B5998",
-          }}
-        >
-          {getValue("hours", "0 Hour")}
-        </div>
+  style={{
+    position: "absolute",
+    bottom: "195px",
+    left: "350px",
+    fontSize: "16px",
+    fontWeight: "bold",
+    fontFamily: "Verdana, sans-serif",
+    color: "#3B5998",
+    display: "flex",
+    alignItems: "center",
+  }}
+>
+  {/* Editable Number */}
+  <span
+    contentEditable
+    suppressContentEditableWarning
+    onBlur={(e) => {
+      const value = e.currentTarget.textContent.trim();
+      setForm({ ...form, hours: value.replace(/\D/g, "") }); // only digits
+    }}
+    onFocus={(e) => {
+      if (!form.hours) e.currentTarget.textContent = "";
+    }}
+    style={{
+      outline: "none",
+      minWidth: "20px",
+      textAlign: "left",
+    }}
+  >
+    {form.hours || "0"}
+  </span>
+
+  {/* Static "Hour" label */}
+  <span>Hour</span>
+</div>
+
 
         {/* Date */}
-        <div
-          contentEditable
-          suppressContentEditableWarning
-          onFocus={(e) => handleFocus(e, "date", "dd/mm/yyyy")}
-          onBlur={(e) => handleBlur(e, "date", "dd/mm/yyyy")}
-          style={{
-            ...baseStyle,
-            position: "absolute",
-            bottom: "160px",
-            left: "350px",
-            width: "400px",
-            fontSize: "16px",
-            fontWeight: 'bold',
-            color: "#3B5998",
-          }}
-        >
-          {getValue("date", "dd/mm/yyyy")}
-        </div>
+        <input
+  type="text"
+  value={form.date}
+  onChange={(e) => {
+    let input = e.target.value.replace(/\D/g, ""); // remove non-numeric
+    if (input.length > 8) input = input.slice(0, 8);
+
+    let formatted = input;
+    if (input.length > 4) {
+      formatted = `${input.slice(0, 2)}/${input.slice(2, 4)}/${input.slice(4)}`;
+    } else if (input.length > 2) {
+      formatted = `${input.slice(0, 2)}/${input.slice(2)}`;
+    }
+
+    setForm({ ...form, date: formatted });
+  }}
+  placeholder="dd/mm/yyyy"
+  maxLength={10}
+  style={{
+    position: "absolute",
+    bottom: "155px",
+    left: "350px",
+    width: "120px",
+    height: "26px",        // increased height
+    lineHeight: "26px", 
+    fontSize: "16px",
+    fontWeight: "bold",
+    fontFamily: "Verdana, sans-serif",
+    border: "none",
+    outline: "none",
+    background: "transparent",
+    color: "#3B5998",
+  }}
+/>
+
 
         {/* Mode */}
-        <div
-          contentEditable
-          suppressContentEditableWarning
-          onFocus={(e) => handleFocus(e, "mode", "Online")}
-          onBlur={(e) => handleBlur(e, "mode", "Online")}
-          style={{
-            ...baseStyle,
-            position: "absolute",
-            bottom: "125px",
-            left: "350px",
-            width: "400px",
-            fontSize: "16px",
-            fontWeight: 'bold',
-            color: "#3B5998",
-          }}
-        >
-          {getValue("mode", "Online")}
-        </div>
+        <select
+  value={form.mode}
+  onChange={(e) => setForm({ ...form, mode: e.target.value })}
+  style={{
+    position: "absolute",
+    bottom: "121px",
+    left: "350px",
+    width: "400px",
+    height: "26px",               // ✅ ensures full text visibility
+    lineHeight: "26px",
+    fontSize: "16px",
+    fontWeight: "bold",
+    fontFamily: "Verdana, sans-serif",
+    color: "#3B5998",
+    background: "transparent",
+    border: "none",
+    outline: "none",
+    appearance: "none",
+    WebkitAppearance: "none",
+    MozAppearance: "none",
+    textAlign: "left",
+  }}
+>
+  <option value="">Select Mode</option>
+  <option value="Online">Online</option>
+  <option value="Face To Face">Face To Face</option>
+  <option value="In Office">In Office</option>
+  <option value="In House">In House</option>
+</select>
 
         {/* Signature */}
         {/* Signature and Seal Container */}
