@@ -237,7 +237,7 @@ const Certificate = () => {
           style={{
             position: "absolute",
             bottom: "110px",
-            right: "130px",
+            right: "110px",
             textAlign: "center",
             color: "#3B5998",
           }}
@@ -245,12 +245,12 @@ const Certificate = () => {
           <img
             src="/signature.png"
             alt="Signature"
-            style={{ width: "150px", marginBottom: "5px" }}
+            style={{ width: "250px", marginBottom: "10px" }}
           />
-          <p style={{ fontSize: "18px", fontWeight: "bold", fontFamily: "Verdana" }}>
+          <p style={{ fontSize: "24px", fontFamily: "'Pacifico', cursive" }}>
             Umamaheswari Sukumar
           </p>
-          <p style={{ fontSize: "16px", fontFamily: "Verdana" }}>
+          <p style={{ fontSize: "16px", fontFamily: "Verdana, sans-serif" }}>
             Executive Director
           </p>
         </div>
