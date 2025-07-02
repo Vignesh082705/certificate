@@ -165,26 +165,26 @@ const Certificate = () => {
     color: "#3B5998",
   }}
 >
-  AAACT1000
+  AAACT1
 </div>
 
 {/* Input for last 4 digits */}
 <input
   type="text"
   value={form.certNo}
-  maxLength={4}
+  maxLength={7}
   onChange={(e) =>
     setForm({
       ...form,
       certNo: e.target.value.replace(/[^0-9]/g, ""),
     })
   }
-  placeholder="0000"
+  placeholder="0000000"
   style={{
     position: "absolute",
     bottom: "227px",       // slightly moved up
-    left: "456px",
-    width: "60px",
+    left: "422px",
+    width: "80px",
     height: "26px",        // increased height
     lineHeight: "26px",    // match height
     fontSize: "16px",
