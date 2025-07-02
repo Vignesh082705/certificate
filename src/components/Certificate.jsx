@@ -18,10 +18,12 @@ const Certificate = () => {
     const element = certRef.current;
     const opt = {
       margin: 0,
-      filename: `${form.certNo || "certificate"}.pdf`,
+      filename: `AAACT1${form.certNo}_${(form.name || "certificate")
+        .toUpperCase()
+        .replace(/[\\/:*?"<>|]/g, "")}.pdf`,
       image: { type: "jpeg", quality: 1 },
       html2canvas: {
-        scale: 3,
+        scale: 2,
         useCORS: true,
         allowTaint: true,
         logging: false,
@@ -31,6 +33,7 @@ const Certificate = () => {
         format: "a4",
         orientation: "landscape",
       },
+      pagebreak: { mode: ["avoid-all"] },
     };
     html2pdf().set(opt).from(element).save();
   };
